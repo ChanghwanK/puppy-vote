@@ -1,0 +1,8 @@
+
+spring:
+  application:
+    name: puppy-vote
+  profiles:
+    include:
+      - persistence-database
+      - persistence-redis-adapter
