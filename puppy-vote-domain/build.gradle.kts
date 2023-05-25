@@ -1,4 +1,3 @@
 dependencies {
-    implementation(project(":puppy-vote-infrastructure:persistence-database"))
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("at.favre.lib:bcrypt:0.10.2")
 }

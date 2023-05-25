@@ -1,6 +1,6 @@
 dependencies {
     implementation(project(":puppy-vote-domain"))
+    implementation(project(":puppy-vote-infrastructure:persistence-database"))
 
-    runtimeOnly("com.mysql:mysql-connector-j")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }

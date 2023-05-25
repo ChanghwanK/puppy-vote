@@ -5,6 +5,12 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
     kotlin("jvm") version "1.7.22"
     kotlin("plugin.spring") version "1.7.22"
+    kotlin("plugin.jpa") version "1.6.21"
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
@@ -23,8 +29,12 @@ subprojects {
     apply(plugin = "kotlin-spring")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "kotlin-kapt")
+    apply(plugin= "kotlin-jpa")
 
     dependencies {
+        // jwt
+        implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+        runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         testImplementation("org.springframework.boot:spring-boot-starter-test") {
