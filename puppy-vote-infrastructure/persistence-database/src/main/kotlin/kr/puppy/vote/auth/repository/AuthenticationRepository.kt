@@ -4,4 +4,5 @@ import kr.puppy.vote.auth.entity.AuthenticationJpaEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface AuthenticationRepository : JpaRepository<AuthenticationJpaEntity, Long> {
+    fun existsByPrincipal(principal: String): Boolean
 }
